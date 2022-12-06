@@ -17,7 +17,9 @@ export const TodoInput = ({ setTodoList }) => {
         value={textContent}
         onChange={(e) => setTextContent(e.target.value)}
       />
-      <button onClick={addTodo}>ADD</button>
+      <button onClick={addTodo} disabled={!textContent.trim()}>
+        ADD
+      </button>
     </>
   )
 }
