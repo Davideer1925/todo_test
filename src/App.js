@@ -10,12 +10,17 @@ function App() {
     newTodoList.splice(index, 1)
     setTodoList(newTodoList)
   }
+  function modTodo(index) {
+    const newTodoList1 = [...todoList]
+    newTodoList1[index].isComplete = !newTodoList1[index].isComplete
+    setTodoList(newTodoList1)
+  }
   console.log(todoList)
   return (
     <div>
       <TodoHeader headerContent={'Todo List'} />
       <TodoInput setTodoList={setTodoList} />
-      <TodoList todoList={todoList} delTodo={delTodo} />
+      <TodoList todoList={todoList} delTodo={delTodo} modTodo={modTodo} />
     </div>
   )
 }

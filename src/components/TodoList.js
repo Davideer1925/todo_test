@@ -1,6 +1,6 @@
 import { TodoItem } from './TodoItem'
 
-export const TodoList = ({ todoList, delTodo }) => {
+export const TodoList = ({ todoList, delTodo, modTodo }) => {
   return (
     <>
       <ul>
@@ -11,6 +11,7 @@ export const TodoList = ({ todoList, delTodo }) => {
             isComplete={isComplete}
             delTodo={delTodo}
             index={index}
+            modTodo={modTodo}
           />
         ))}
       </ul>
