@@ -2,13 +2,15 @@ export const TodoItem = ({ content, isComplete, index, delTodo, modTodo }) => {
   return (
     <>
       <li>
-        <span
-          onDoubleClick={() => modTodo(index)}
-          style={{ textDecoration: isComplete ? 'line-through' : 'none' }}
-        >
+        <input
+          type={'checkbox'}
+          checked={isComplete}
+          onChange={() => modTodo(index)}
+        />
+        <span style={{ textDecoration: isComplete ? 'line-through' : 'none' }}>
           {content}
         </span>
-        <button onClick={() => delTodo(index)}>DEL</button>
+        {isComplete && <button onClick={() => delTodo(index)}>DEL</button>}
       </li>
     </>
   )
