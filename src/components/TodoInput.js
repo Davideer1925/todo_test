@@ -7,7 +7,7 @@ export const TodoInput = ({ setTodoList }) => {
       setTextContent('')
       return
     }
-    setTodoList((arr) => [...arr, { content: textContent }])
+    setTodoList((arr) => [...arr, { content: textContent, isComplete: false }])
     setTextContent('')
   }
   return (

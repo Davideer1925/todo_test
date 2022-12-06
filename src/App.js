@@ -5,11 +5,17 @@ import { TodoList } from './components/TodoList'
 
 function App() {
   const [todoList, setTodoList] = useState([])
+  function delTodo(index) {
+    const newTodoList = [...todoList]
+    newTodoList.splice(index, 1)
+    setTodoList(newTodoList)
+  }
+  console.log(todoList)
   return (
     <div>
       <TodoHeader headerContent={'Todo List'} />
       <TodoInput setTodoList={setTodoList} />
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} delTodo={delTodo} />
     </div>
   )
 }

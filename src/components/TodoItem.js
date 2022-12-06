@@ -1,7 +1,10 @@
-export const TodoItem = ({ content }) => {
+export const TodoItem = ({ content, isComplete, index, delTodo }) => {
   return (
     <>
-      <li>{content}</li>
+      <li>
+        <span>{content}</span>
+        <button onClick={() => delTodo(index)}>DEL</button>
+      </li>
     </>
   )
 }
